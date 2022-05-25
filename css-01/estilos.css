@@ -1,0 +1,35 @@
+html {
+    font-size: 15px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    background-color: aqua;
+    margin: 50px;
+    padding: 50px;
+}
+
+div {
+    background-color: tomato;
+}
+
+div span {
+    background-color: blueviolet;
+}
+
+#el-span {
+    background-color: yellow;
+}
+
+#nombre {
+    background-color: green;
+}
+
+.textos {
+    color: pink;
+    background-color: black;
+    font-size: 1.3rem;
+}
