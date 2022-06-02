@@ -1,0 +1,110 @@
+* {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: gray;
+}
+
+.contenedor-principal {
+  padding: 0 20%;
+  width: 100%;
+  background-color: red;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  /* background-color: white; */
+}
+
+.logo {
+  width: 100px;
+  height: 20px;
+  background-color: blue;
+}
+
+.cruz {
+  width: 100px;
+  height: 20px;
+  background-color: white;
+}
+
+.step-container {
+  width: 100%;
+  margin-top: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.step-manager {
+  width: 35%;
+  background-color: pink;
+  min-width: 200px;
+}
+
+.step-form-container {
+  width: 65%;
+  height: 500px;
+  background-color: orange;
+  display: flex;
+}
+
+.arrow-container {
+  text-align: right;
+  padding-right: 20px;
+  width: 10%;
+  background-color: blue;
+  color: white;
+}
+
+.form-container {
+  width: 90%;
+  background-color: purple;
+}
+
+.form-container > form {
+  background-color: aqua;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  position: relative;
+}
+
+.form-container > form > button {
+  align-self: center;
+}
+
+.form-container span {
+    background-color: burlywood;
+    position: absolute;
+    top: -8px;
+    right: -3px;
+}
+
+@media (max-width: 768px) {
+  .contenedor-principal {
+    padding: 0 15%;
+    background-color: gray;
+  }
+  
+  .step-manager {
+    width: 100%;
+  }
+
+  .step-form-container {
+    width: 100%;
+    height: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contenedor-principal {
+    padding: 0 5%;
+    background-color: gray;
+  }
+
+}
