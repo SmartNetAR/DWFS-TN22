@@ -1,0 +1,20 @@
+span:hover {
+    cursor: pointer;
+}
+
+input {
+    display: block;
+}
+
+input:invalid {
+    border: 2px dashed red;
+}
+
+#nombre::after {
+    content: "datos incorrectos";
+    color: red;
+}
+
+input:invalid:focus {
+  background-image: linear-gradient(pink, lightgreen);
+}
