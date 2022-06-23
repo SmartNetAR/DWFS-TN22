@@ -6,7 +6,7 @@ const {
     obtenerPorId,
     listar,
     borrarProducto
-} = require("../controllers/productos");
+} = require("../controllers/productosApi");
 
 router.get("/", listar);
 

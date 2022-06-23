@@ -18,10 +18,10 @@ const productos = {
 
         // si no se encuentra ningún producto
         if (!productoEncontrado){
-            res.status(404).send("No se encuentra el producto");
+            res.status(404).send();
         }
         else {
-            res.render( "producto.ejs",  {prod: productoEncontrado} );
+            res.send( productoEncontrado );
         }
 
     },
