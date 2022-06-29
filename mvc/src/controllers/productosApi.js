@@ -2,6 +2,10 @@ const productosData = require("../data/productosData")
 
 const productos = {
     listar: (req, res) => {
+        const loBuscado = req.query;
+        console.log(loBuscado)
+        const name = loBuscado.name;
+
         res.status(200).send(productosData);
     },
     obtenerPorId: (req, res) => {

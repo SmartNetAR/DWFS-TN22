@@ -1,6 +1,49 @@
 const productosData = require("../data/productosData")
 
 const productos = {
+
+
+
+
+
+    vistaListado: (req, res) =>{
+        const {name} = req.query;
+
+        if (name == undefined)
+        {
+            res.render("listado", {productos: productosData, busqueda: ""})
+        }
+        else {
+            const resultado = productosData.filter((producto)=>{
+                return producto.name.includes(name)
+            });
+
+            res.render("listado", {productos: resultado, busqueda: name })
+        }
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     listar: (req, res) => {
         res.status(200).send(productosData);
     },

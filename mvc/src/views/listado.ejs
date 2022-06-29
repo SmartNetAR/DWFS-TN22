@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Producto</title>
+</head>
+<body>
+    <h1>Listado de productos</h1>
+
+    <form action="/productos/lista" method="get">
+        <label for="nombre">Buscar por nombre</label>
+        <input id="nombre" type="search" name="name" />
+        <button type="submit">Buscar</button>
+    </form>
+
+    <h2>Valor buscado: <%= busqueda %></h2>
+
+    <% if (productos.length === 0) { %>
+        <p>No hay productos</p> 
+    <% } else { %>
+        <ul>
+            <% productos.forEach(producto => { %>
+                <li>Nombre: <%= producto.name %> - Stock: <%= producto.stock %> </li>
+            <% }) %>
+        </ul>
+    <% } %> 
+
+</body>
+</html>

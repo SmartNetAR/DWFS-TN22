@@ -5,10 +5,13 @@ const {
     agregarProducto,
     obtenerPorId,
     listar,
-    borrarProducto
+    borrarProducto,
+    vistaListado
 } = require("../controllers/productos");
 
 router.get("/", listar);
+
+router.get("/lista", vistaListado);
 
 router.get("/:id", obtenerPorId);
 
