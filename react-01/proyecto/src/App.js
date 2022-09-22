@@ -1,58 +1,39 @@
 import React, {Component} from 'react'
+import About from './about/components/About';
 import './App.css';
-import Avatar from './perfil/components/Avatar';
+import Home from './home/components/Home';
+import Container from './layout/container/componets/Container';
 import Footer from './layout/footer/components/Footer';
+import TopBar from './topBar/components/TopBar';
+import UserList from './users/components/UserList';
 
 class App extends Component {
 
   constructor() {
     super();
     this.state = {
-      usuarios: [
-        {id: 0, name: "marcelo", isBot: false, following: false}, 
-        {id: 1, name: "lucas", isBot: true, following: false}, 
-        {id: 2, name: "lucas", isBot: true, following: true}, 
-        {id: 3, name: "juan", isBot: false, following: false}, 
-        {id: 4, name: "martin", isBot: false, following: true}, 
-        {id: 5, name: "cristian", isBot: true, following: true}, 
-      ]
+      currentSection: "home"
     }
   }
 
-  handleOnToggleSeguir(usuario) {
-    return () => {
-      let followingNewValue = !usuario.following;
-
-      const newUsersArray = Array.from(this.state.usuarios);
-      newUsersArray[usuario.id].following = followingNewValue;
-
-      this.setState({
-        usuarios: newUsersArray
-      })
-
-    }
+  handleNavigate = (sectionName) => {
+    this.setState({
+      currentSection: sectionName
+    })
   }
+
 
   render() {
-
     return (
-      <>
-        <div className="App">
-          <header className="App-header">
-            {/* <Avatar/> */}
-            {this.state.usuarios.map((usr, idx)=> (
-              <Avatar
-                nombre={usr.name} 
-                esRobot={usr.isBot}
-                esSeguido={usr.following}
-                key={usr.name + idx}
-                onToggleSeguir={this.handleOnToggleSeguir(usr)}
-              />))}
-            {/* {usuarios.map((usr)=> <p>{usr}</p>)} */}
-          </header>
-        </div>
+      <div className='main'>
+        <TopBar onNavigate={this.handleNavigate} />
+        <Container>
+            {this.state.currentSection === 'home' && <Home title="Mi web en React"/>}
+            {this.state.currentSection === 'users' && <UserList/>}
+            {this.state.currentSection === 'about' && <About/>}
+        </Container>
         <Footer/>
-      </>
+      </div>
     );
 
   }
