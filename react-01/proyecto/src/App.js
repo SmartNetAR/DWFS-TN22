@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import About from './about/components/About';
 import './App.css';
+import Contact from './contact/components/Contact';
 import Home from './home/components/Home';
 import Container from './layout/container/componets/Container';
 import Footer from './layout/footer/components/Footer';
@@ -31,6 +32,7 @@ class App extends Component {
             {this.state.currentSection === 'home' && <Home title="Mi web en React"/>}
             {this.state.currentSection === 'users' && <UserList/>}
             {this.state.currentSection === 'about' && <About/>}
+            {this.state.currentSection === 'contact' && <Contact/>}
         </Container>
         <Footer/>
       </div>
